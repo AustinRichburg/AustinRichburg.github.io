@@ -1,0 +1,172 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+hr {
+    margin-top: 0;
+}
+
+.align-right {
+    float: right;
+}
+
+.grouped-text {
+    line-height: 1;
+    margin: 25px 0 0 0;
+}
+
+.sidebar {
+    color: white;
+    font-family: "VT323", sans-serif;
+    width: 40%;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1505238680356-667803448bb6?ixlib=rb-0.3.5&s=818f71d…&auto=format&fit=crop&w=1350&q=80");
+    position: fixed;
+    left: 0;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.sidebar::after {
+    background-color: rgba(120, 40, 100, 0.4);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.sidebar > .img-container {
+    border-radius: 30px;
+    height: 400px;
+    margin: 20px auto;
+    width: 50%;
+    display: block;
+    border: 1px solid black;
+    overflow: hidden;
+}
+
+.sidebar > .img-container > .self-img {
+    height: 400px;
+    width: 100%;
+    transition: 0.6s ease;
+}
+
+.sidebar > .img-container:hover > .self-img {
+    transform: scale(1.4);
+}
+
+.sidebar-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav {
+    text-align: center;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: rgba(120, 40, 100, 1);
+    color: white;
+}
+
+.contact-nav {
+    list-style-type: none;
+    position: absolute;
+    bottom: 0;
+    font-size: 0.75em;
+    padding: 0;
+}
+
+.contact-nav > li {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+.contact-nav > li:hover {
+    text-decoration: underline;
+}
+
+.contact-nav > li > a {
+    color: white;
+}
+
+.contact-nav > li > a > i {
+    margin: 5px 8px;
+}
+
+.contact-container {
+    padding: 20px;
+    background-color: black;
+}
+
+.main-content {
+    height: 100%;
+    padding: 20px 40px;
+    margin-left: 40%;
+}
+
+.profile-section {
+    padding: 20px;
+    margin: 10px 0 30px 0;
+    border-left: 3px solid #580C6D;
+}
+
+.card {
+    margin: 20px 10px;
+    box-shadow: 1px 3px 2px #ededed;
+    cursor: pointer;
+    height: 250px;
+}
+
+.card-header {
+    font-weight: 800;
+}
+
+.repo-dates {
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 991px){
+    .sidebar {
+        display: block;
+        height: 500px;
+        position: relative;
+        width: 100%;
+    }
+
+    .sidebar > .img-container {
+        width: 300px;
+        height: 300px;
+    }
+
+    .contact-nav {
+        position: relative;
+        top: 33%;
+        font-size: 1.2em;
+        text-align: center;
+        margin: 0;
+        font-family: "VT323";
+        color: white;
+    }
+
+    .main-content {
+        display: block;
+        margin-left: 0;
+        width: 100%;
+    }
+}

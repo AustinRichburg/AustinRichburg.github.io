@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=VT323|Montserrat" rel="stylesheet">
+    <script src="./lib/angular.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Austin Richburg</title>
+</head>
+<body ng-app="myApp" ng-controller="mainCtrl">
+    <div class="sidebar">
+        <div class="img-container"><img src="assets/austin.jpg" alt="Austin" class="self-img"></div>
+        <p class="sidebar-bg">Full-Stack Web Developer</p>
+        <p class="sidebar-bg">&bull; Asks which IPAs are on tap &bull; Lifts heavy things</p>
+        <ul class="nav flex-lg-column justify-content-center sidebar-bg">
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#projects" class="nav-link">Projects</a>
+            </li>
+        </ul>
+        <ul class="contact-nav sidebar-bg w-100 d-none d-lg-block">
+            <li><a href="#"><i class="fas fa-map-marker-alt fa-sm"></i>Manchester, NH</a></li>
+            <li><a href="https://www.linkedin.com/in/austin-richburg/" target="_blank" target="_blank"><i class="fab fa-linkedin fa-sm"></i>/in/austin-richburg</a></li>
+            <li><a href="#"><i class="fas fa-envelope fa-sm"></i>austintrichburg@gmail.com</a></li>
+            <li><a href="https://github.com/AustinRichburg" target="_blank"><i class="fab fa-github fa-sm"></i>AustinRichburg</a></li>
+        </ul>
+    </div>
+
+    <div class="contact-container w-100 d-lg-none">
+        <ul class="contact-nav">
+            <li><a href="#"><i class="fas fa-map-marker-alt fa-sm"></i>Manchester, NH</a></li>
+            <li><a href="https://www.linkedin.com/in/austin-richburg/" target="_blank"><i class="fab fa-linkedin fa-sm"></i>/in/austin-richburg</a></li>
+            <li><a href="#"><i class="fas fa-envelope fa-sm"></i>austintrichburg@gmail.com</a></li>
+            <li><a href="https://github.com/AustinRichburg" target="_blank"><i class="fab fa-github fa-sm"></i>AustinRichburg</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <div id="about" class="profile-section">
+            <h1>Austin Richburg</h1>
+            <p>
+                Hello! I'm Austin Richburg and I'm a full-stack web developer based out of New Hampshire.
+            </p>
+        </div>
+
+        <div class="profile-section">
+            <h5>Toolbox</h5>
+            <hr>
+            <div class="grouped-text">
+                <p><strong>Front-End</strong></p>
+                <p>
+                    JavaScript &bull; HTML5 &bull; CSS3 &bull; Bootstrap 4 &bull; jQuery &bull; AngularJS &bull; Vue.js
+                </p>
+            </div>
+            <div class="grouped-text">
+                <p><strong>Back-End</strong></p>
+                <p>
+                    NodeJS &bull; NPM &bull; Express &bull; MongoDB &bull; Mongoose &bull; PassportJS
+                </p>
+            </div>
+            <div class="grouped-text">
+                <p><strong>Other</strong></p>
+                <p>
+                    Git &bull; GitHub &bull; Visual Studio Code &bull; Java &bull; Android
+                </p>
+            </div>
+        </div>
+
+        <div class="profile-section">
+            <h5>Education</h5>
+            <hr>
+            <div class="grouped-text">
+                <p><strong>Western Carolina University</strong><span class="align-right">2013-2017</span></p>
+                <p><em>Bachelor's of Computer Science</em></p>
+            </div>
+        </div>
+
+        <div id="projects" class="profile-section" ng-init="getRepos()">
+            <h5>Projects</h5>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 col-lg-6" ng-repeat="repo in repos">
+                    <div class="card" ng-click="redirectToRepo(repo.html_url)">
+                        <div class="card-header">
+                            {{ repo.name }}
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ repo.description }}</p>
+                            <div class="repo-dates grouped-text">
+                                <p class="date-updated text-muted">Updated: {{ repo.updated_at.getMonth() + 1}}/{{repo.updated_at.getDate()}}/{{ repo.updated_at.getFullYear() }}</p>
+                                <p class="date-created text-muted">Created: {{ repo.created_at.getMonth() + 1}}/{{repo.created_at.getDate()}}/{{ repo.created_at.getFullYear() }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="./app.js"></script>
+
+</body>
+</html>
