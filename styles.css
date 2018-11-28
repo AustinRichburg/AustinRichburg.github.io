@@ -127,6 +127,7 @@ hr {
     box-shadow: 1px 3px 2px #ededed;
     cursor: pointer;
     height: 250px;
+    overflow: hidden;
 }
 
 .card-header {
@@ -135,10 +136,36 @@ hr {
 
 .repo-dates {
     font-size: 0.8rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.date-created {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: 10px;
+}
+
+.date-updated {
     position: absolute;
     bottom: 0;
     right: 0;
     margin-right: 10px;
+}
+
+@media (min-width: 992px) and (max-width: 1270px){
+    .date-created {
+        position: relative;
+        margin: 10px 15px;
+    }
+
+    .date-updated {
+        position: relative;
+        margin: 10px 15px;
+    }
 }
 
 @media only screen and (max-width: 991px){
