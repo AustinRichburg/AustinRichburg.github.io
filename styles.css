@@ -132,6 +132,7 @@ hr {
 
 .card-header {
     font-weight: 800;
+    background-color: rgba(88, 12, 109, 0.6);
 }
 
 .repo-dates {
